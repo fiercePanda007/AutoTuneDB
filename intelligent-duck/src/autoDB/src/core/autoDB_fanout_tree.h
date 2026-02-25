@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 /*
  * This file contains utility code for using the fanout tree to help AUTODB
  * decide the best fanout and key partitioning scheme for AUTODB nodes

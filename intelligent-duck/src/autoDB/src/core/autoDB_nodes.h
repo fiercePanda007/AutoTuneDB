@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 /*
  * This file contains code for AUTODB nodes. There are two types of nodes in AUTODB:
  * - Model nodes (equivalent to internal/inner nodes of a B+ Tree)

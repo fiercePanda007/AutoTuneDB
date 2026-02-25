@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 /*
  * AUTODB with key type T and payload type P, combined type V=std::pair<T, P>.
  * Iterating through keys is done using an "Iterator".

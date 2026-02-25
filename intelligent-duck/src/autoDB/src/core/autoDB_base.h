@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 /* This file contains the classes for linear models and model builders, helpers
  * for the bitmap,
  * cost model weights, statistic accumulators for collecting cost model
