@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Optimizer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Self-Improving Database Query Optimizer</h1>
+            <div class="status-indicator">
+                <span class="status-dot" id="status-dot"></span>
+                <span id="status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h2>System Overview</h2>
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-label">Total Queries</div>
+                        <div class="metric-value" id="total-queries">-</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Latency</div>
+                        <div class="metric-value" id="avg-latency">-</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Success Rate</div>
+                        <div class="metric-value" id="success-rate">-</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Policy Updates</div>
+                        <div class="metric-value" id="policy-updates">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Latency Over Time</h2>
+                <canvas id="latency-chart"></canvas>
+            </div>
+
+            <div class="card">
+                <h2>Phase Comparison</h2>
+                <div id="phase-comparison"></div>
+            </div>
+
+            <div class="card">
+                <h2>Latency Distribution</h2>
+                <div class="distribution-grid">
+                    <div class="percentile">
+                        <div class="percentile-label">P50</div>
+                        <div class="percentile-value" id="p50">-</div>
+                    </div>
+                    <div class="percentile">
+                        <div class="percentile-label">P95</div>
+                        <div class="percentile-value" id="p95">-</div>
+                    </div>
+                    <div class="percentile">
+                        <div class="percentile-label">P99</div>
+                        <div class="percentile-value" id="p99">-</div>
+                    </div>
+                    <div class="percentile">
+                        <div class="percentile-label">P99.9</div>
+                        <div class="percentile-value" id="p999">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Learning Progress</h2>
+                <div id="learning-stats">
+                    <p><strong>Policy Updates:</strong> <span id="learning-policy-updates">0</span></p>
+                    <p><strong>Meta-Learning Runs:</strong> <span id="meta-runs">0</span></p>
+                    <p><strong>Latest Loss:</strong> <span id="latest-loss">-</span></p>
+                </div>
+            </div>
+
+            <div class="card full-width">
+                <h2>Recent Queries</h2>
+                <div class="table-container">
+                    <table id="recent-queries">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Phase</th>
+                                <th>Latency (ms)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="queries-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

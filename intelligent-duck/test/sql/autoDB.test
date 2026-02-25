@@ -1,0 +1,23 @@
+# name: test/sql/autoDB.test
+# description: test autoDB extension
+# group: [autoDB]
+
+# Before we load the extension, this will fail
+statement error
+SELECT autoDB('Sam');
+----
+Catalog Error: Scalar Function with name autoDB does not exist!
+
+# Require statement will ensure this test is run with this extension loaded
+require autodb
+
+# Confirm the extension works
+query I
+SELECT autoDB('Sam');
+----
+autoDB Sam 🐥
+
+query I
+SELECT autoDB_openssl_version('Michael');
+----
+<REGEX>:autoDB Michael, my linked OpenSSL version is OpenSSL.*

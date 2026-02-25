@@ -1,0 +1,87 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python tooling caches and reports
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and runtime temp files
+*.log
+*.pid
+*.pid.lock
+*.out
+*.err
+
+# Local environment/config overrides
+.env
+.env.*
+!.env.example
+config.yaml
+config.yaml.save
+
+# Database sidecars and model checkpoints
+*.duckdb-wal
+*.duckdb-shm
+*.pt
+*.pth
+
+# Keep tracked examples
+!config.yaml.example
+
+# Project runtime outputs
+/data/logs/
+!/data/logs/.gitkeep
+/data/policies/*.pt
+/data/policies/*_state.json
+/data/final_report.json
+/data/final_report.txt
+/data/telemetry.db
+/data/*.duckdb
+/core/telemetry.db
+/demo.duckdb
+/intelligent-duck/*.duckdb
+/intelligent-duck/*.db
+
+# C/C++/CMake build artifacts
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+
+# autoDB nested project build/temp outputs
+/intelligent-duck/build/
+/intelligent-duck/*.duckdb.tmp/
+/intelligent-duck/**/*.duckdb_extension
